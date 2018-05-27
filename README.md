@@ -1,4 +1,4 @@
-# Docker container for Coinflip application by Random Receptacle inc.
+# Docker container
 
  This project is to run the Coinflip application as a Docker Container and access it from the host machine web browser.
  
