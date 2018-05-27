@@ -1,24 +1,28 @@
-# Docker for Coinflip
+# Docker container for Coinflip application by Random Receptacle inc.
 
- This project is to run Coinflip application as a Docker Container and access it from browser.
+ This project is to run the Coinflip application as a Docker Container and access it from the host machine web browser.
  
-### Prerequisites
+## Prerequisites:
   
- Your PC needs to be installed with docker to use this. Please refer [This page](https://docs.docker.com/install/) for installation instructions.
+ Docker should be installed on the host machine(s). Please refer [Install docker](https://docs.docker.com/install/) for installation instructions.
  
-## How to run this.
+## How to run the project:
 
  1. Switch to repo directory.
- 2. Run below command to build Docker image.
+ 2. Run the below command to build the Docker image.
  ```
- docker build . -t coinflip
+ docker build -t coinflip .
  ```
- 3. Run below command to run container with built image.
+ 3. Run the below command to run the container. By default container runs as root user. To run it as non-root user (more secure), add --u#### parameter and set #### to user id.
  ```
- docker run -d -p 8888:8888 coinflip
+ docker run -d -p 7777:7777 coinflip
  ```
- 4. To access the application, open Chrome/Firefox or any other we browser and hit below URL.
+ 4.a To access the service from the host machine, open the below URL on a web browser on the host machine.
  ```
- http://192.168.56.130:8888/
+ http://localhost:7777/
  ```
- 5. Refresh the page as many times as you want to flip the coin. :)
+ 4.b To access the service from any other machine on the network, open the below URL. Please update x.x.x.x to the IP address of the host machine.
+ ```
+ http://x.x.x.x:7777/
+ ```
+ 5. Refresh the web page to flip the coin.
